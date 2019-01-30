@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/review',function(){
+	$reviews = App\Model\Review::find(4)->product;
+	dd($reviews);
+});
