@@ -3,6 +3,8 @@
 namespace App\Http\Resources\Product;
 
 use Illuminate\Http\Resources\Json\Resource;
+use App\Model\Review;
+use App\Http\Resources\Review\ReviewResource;
 
 class ProductResource extends Resource
 {
@@ -22,9 +24,10 @@ class ProductResource extends Resource
             'discount' => $this->discount,
             'totalPrice' => round((1 - ($this->discount)/100) * $this->price ,2),//calculate total price
             'rating' => $this->reviews->count() > 0 ? round($this->reviews->sum('star')%$this->reviews->count('star'),2) : "No Rating!",//count rating
-            'link' => [
-                'reviews' => route('reviews.index',$this->id),
-            ],
+            // 'link' => [
+                // 'reviews' => route('reviews.index',$this->id),
+                'reviews' => ReviewResource::collection($this->reviews),
+            // ],
         ];
     }
 }
