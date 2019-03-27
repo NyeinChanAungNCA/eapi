@@ -6,8 +6,9 @@ use App\Model\Review;
 use App\Model\Product;
 use Illuminate\Http\Request;
 use App\Http\Resources\Review\ReviewResource;
+use App\Http\Controllers\API\BaseController as BaseController;
 
-class ReviewController extends Controller
+class ReviewController extends BaseController
 {
     /**
      * Display a listing of the resource.
@@ -18,7 +19,8 @@ class ReviewController extends Controller
     {
         // return ReviewResource::collection(Review::all());//Show all Review
 
-        return ReviewResource::collection($product->reviews);// Show Review By product id
+        // return ReviewResource::collection($product->reviews);// Show Review By product id
+        return $this->sendResponse(ReviewResource::collection($product->reviews), 'Review retrieved successfully.');
     }
 
     /**

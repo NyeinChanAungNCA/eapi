@@ -6,8 +6,9 @@ use App\Model\Product;
 use Illuminate\Http\Request;
 use App\Http\Resources\Product\ProductCollection;
 use App\Http\Resources\Product\ProductResource;
+use App\Http\Controllers\API\BaseController as BaseController;
 
-class ProductController extends Controller
+class ProductController extends BaseController
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +17,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return ProductCollection::collection(Product::paginate(20));
+        // return ProductCollection::collection(Product::paginate(20));
+        return $this->sendResponse(ProductCollection::collection(Product::paginate(20)), 'Products retrieved successfully.');
         // return new ProductCollection(Product::all());
         // return ProductResource::collection(Product::all());
     }
@@ -50,7 +52,8 @@ class ProductController extends Controller
      */
     public function show(Product $product)
     {
-        return new ProductResource($product);
+        // return new ProductResource($product);
+        return $this->sendResponse(new ProductResource($product), 'Product retrieved successfully.');
     }
 
     /**
