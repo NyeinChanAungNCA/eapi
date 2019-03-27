@@ -56,3 +56,12 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Here is Routes URL with Verb:
+
+1) List: Verb:GET, URL:localhost/eapi/public/api/products
+
+2) Show: Verb:GET, URL:localhost/eapi/public/api/products/{id}
+
+3) List: Verb:GET, URL:http://localhost/eapi/public/api/products/{id}/reviews
+
