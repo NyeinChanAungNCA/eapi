@@ -62,7 +62,7 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 1) Login: Verb:POST, URL:http://localhost/eapi/public/oauth/token
 	- Sample raw data
 
-	-{
+	- {
 		"client_id": "2",
 		"client_secret": "Ha6NSXNotjN1ZUmGRdN9LlqShdd282i7swHfXNn1",
 		"grant_type": "password",
@@ -70,6 +70,14 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 		"password": "user2123",
 		"scope": "*"
 	}
+
+1.1) Show Login User: Verb:GET, URL:http://localhost/eapi/public/api/user
+	
+	'headers' => [
+	    'Accept' => 'application/json',
+	    'Content-Type' => 'application/json',
+	    'Authorization' => 'Bearer '.$accessToken,
+	]
 
 2) Register: Verb:POST, URL:http://localhost/eapi/public/api/register
 
