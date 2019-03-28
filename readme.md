@@ -59,9 +59,23 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 ## Here is Routes URL with Verb:
 
-1) List: Verb:GET, URL:localhost/eapi/public/api/products
+1) Login: Verb:POST, URL:http://localhost/eapi/public/oauth/token
+	- Sample raw data
 
-2) Show: Verb:GET, URL:localhost/eapi/public/api/products/{id}
+	-{
+		"client_id": "2",
+		"client_secret": "Ha6NSXNotjN1ZUmGRdN9LlqShdd282i7swHfXNn1",
+		"grant_type": "password",
+		"username": "user@gmail.com",
+		"password": "user2123",
+		"scope": "*"
+	}
 
-3) List: Verb:GET, URL:http://localhost/eapi/public/api/products/{id}/reviews
+2) Register: Verb:POST, URL:http://localhost/eapi/public/api/register
+
+3) List: Verb:GET, URL:http://localhost/eapi/public/api/products
+
+4) Show: Verb:GET, URL:http://localhost/eapi/public/api/products/{id}
+
+5) List: Verb:GET, URL:http://localhost/eapi/public/api/products/{id}/reviews
 
